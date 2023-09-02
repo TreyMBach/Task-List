@@ -1,0 +1,23 @@
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* center */
+    align-items: center;
+    background-color: black;
+}
+
+
+
+#headerText{
+    /* Put in the top and in the center of the screen */
+    /* Style the text */
+    color: white;
+}
+
+#headerDate{
+    /* Put in the top and in the center of the screen */
+    /* Style the text */
+    color: white;
+    padding-left: 10px;
+}
