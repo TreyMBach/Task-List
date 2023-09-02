@@ -1,6 +1,7 @@
 import React from "react";
 import "./content.css";
-import Form from "../Form/form.js";
+
+import Form from "../Form/Form.js";
 
 export default function Content() {
     return (
