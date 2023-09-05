@@ -5,6 +5,7 @@ export default function Form() {
     // This is the state of the input text.
     const [inputText, setInputText] = useState("");
     const [todos, setTodos] = useState([]);
+    const [editIndex, setEditIndex] = useState(-1);
 
     // This is the function that sets the input text.
     const handleInputChange = (e) => {
@@ -29,11 +30,12 @@ export default function Form() {
         setTodos(updatedTodos);
     }
 
-    const handleEdit = (index) => {
-        console.log("Edit button clicked!");
-        const updatedTodos = todos.filter((_, i) => i !== index);
-        setTodos(updatedTodos);
-    }
+    // Commenting out the edit function for now. WIP
+    // const handleEdit = (index) => {
+    //     console.log("Edit button clicked!");
+    //     const updatedTodos = todos.filter((_, i) => i !== index);
+    //     setTodos(updatedTodos);
+    // }
 
 
 
@@ -55,11 +57,12 @@ export default function Form() {
                 {/* List to Display */}
                 <ul id="list">
                     {todos.map((todo, index) => (
-                        <li key={index}>
-                            {todo}
-                            <button onClick={() => handleDelete(index)}>Delete</button>
-                            <button onClick={() => handleEdit(index)}>Edit</button>
-                        </li>
+                        <ul id="buttonList" key={index}>
+                            <p id="todoItem">{todo}</p>
+                            <button id="deleteButton" onClick={() => handleDelete(index)}>Delete</button>
+                            {/* Commenting out the handle button for now WIP. */}
+                            {/* <button onClick={() => handleEdit(index)}>Edit</button> */}
+                        </ul>
                     ))}
                 </ul>
             </div>
