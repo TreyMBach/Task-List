@@ -14,14 +14,28 @@
     justify-content: space-between;
 }
 
+.list-item {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
 /* Hovering the button element makes it black */
 #todoButton:hover {
     color: white;
 }
 
 #deleteButton {
-    padding: 2px;
+    padding: 20px;
+    border: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
+
+#deleteButton:hover{
+    color: white;
+    background-color: black;
+}
+
 
 #addButton {
     padding: 20px;

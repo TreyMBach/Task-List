@@ -21,7 +21,23 @@ export default function Form() {
         // Using a terinary operator to check if the input text is empty.
         // If so then alert the user to enter a todo.
         // If not then add the todo to the list.
-        inputText.trim() !== "" ? setTodos([...todos, inputText]) : alert("Please enter a todo!");
+        // inputText.trim() !== "" ? setTodos([...todos, inputText]) : alert("Please enter a todo!");
+
+
+        // Attempted to add opacity fade in to the todo item that is inputed. Currently bugged and not working WIP
+
+        if (inputText.trim() !== "") {
+            setTodos([...todos, inputText]);
+            setInputText("");
+
+            // setTimeout action to be able to fade in the todo item that is inputed.
+            setTimeout(() => {
+                const listItems = document.querySelectorAll(".list-item");
+                listItems[listItems.length - 1].style.opacity = 1;
+            }, 10);
+        } else {
+            alert("Please enter a todo!");
+        }
     }
 
     const handleDelete = (index) => {
@@ -57,7 +73,7 @@ export default function Form() {
                 {/* List to Display */}
                 <ul id="list">
                     {todos.map((todo, index) => (
-                        <ul id="buttonList" key={index}>
+                        <ul id="buttonList" className="list-item" key={index}>
                             <p id="todoItem">{todo}</p>
                             <button id="deleteButton" onClick={() => handleDelete(index)}>Delete</button>
                             {/* Commenting out the handle button for now WIP. */}
