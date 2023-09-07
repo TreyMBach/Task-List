@@ -12,6 +12,20 @@
     display: flex;
     margin-top: 10px;
     justify-content: space-between;
+    align-items: center;
+}
+
+#todoItem {
+    background-color: white;
+    border: 1px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 .list-item {
